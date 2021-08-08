@@ -1,41 +1,69 @@
 <!DOCTYPE html>
-<html lang="pl"  xmlns:th="http://www.thymeleaf.org">
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Rejestracja w systemie</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
-<div><h1>Witaj w formularzu rejestracyjnym!</h1>
-<h3>Wypełnij poniższe pola najpierw swoimi danymi,
-    w kolejnych krokach będziesz mógł dodać dane ćwiczącego
-    (Członka Gdańskiego Klubu Kyokushin Karate).</h3>
+<div align="center"><h5>Witaj w formularzu rejestracyjnym!</h5>
+    <h10>Wypełnij poniższe pola najpierw swoimi danymi,
+        w kolejnych krokach będziesz mógł dodać dane ćwiczącego
+        (Członka Gdańskiego Klubu Kyokushin Karate).
+    </h10>
 </div>
-<div align="center">
-    <h1>User Registration</h1>
+<br>
+<br>
+
+<div class="container">
     <form th:action="@{/registrationForm}" method="post" th:object="${formDTO}">
-        <label>Login:</label>
-        <input type="text" th:field="*{login}" /><br/>
 
-        <label>Hasło:</label>
-        <input type="password" th:field="*{password}" /><br/>
+        <div class="input-field col s6">
+            <label>Login:</label>
+            <input type="text" th:field="*{login}"/><br/>
+        </div>
 
+        <div class="input-field col s6">
+            <label>Hasło:</label>
+            <input type="password" th:field="*{password}"/><br/>
+        </div>
 
-        <label>Imię:</label>
-        <input type="text" th:field="*{name}" /><br/>
+        <div class="row">
+            <div class="input-field col s6">
+                <input th:field="*{name}" id="name" type="text" class="validate">
+                <label for="name">Imię</label>
+            </div>
+            <div class="input-field col s6">
+                <input th:field="*{surname}" id="surname" type="text" class="validate">
+                <label for="surname">Nazwisko</label>
+            </div>
+        </div>
 
-        <label>Nazwisko:</label>
-        <input type="text" th:field="*{surname}" /><br/>
-
-        <label>E-mail:</label>
-        <input type="text" th:field="*{email}" /><br/>
+        <div class="input-field col s3">
+            <input th:field="*{email}" id="email" type="text" class="validate">
+            <label for="email">Email</label>
+        </div>
 
         <label>Numer telefonu:</label>
-        <input type="tel" th:field="*{phoneNumber}"
-               pattern="[0-9]{9}"
+        <input type="tel" placeholder="+48777777777" th:field="*{phoneNumber}"
+               pattern="[+0-9]{12}"
                required/>
-
-        <button type="submit">Register</button>
+        <br><br>
+        <button type="submit">ZAREJESTRUJ</button>
     </form>
 </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <style>
+        .container{
+            max-width: 480px;
+            margin: 0 auto;
+        }
+    </style>
 </body>
 </html>
