@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Rejestracja w systemie</title>
+</head>
+<body>
+<div><h1>Witaj w formularzu rejestracyjnym!</h1>
+<h3>Wypełnij poniższe pola najpierw swoimi danymi,
+    w kolejnych krokach będziesz mógł dodać dane ćwiczącego
+    (Członka Gdańskiego Klubu Kyokushin Karate).</h3>
+</div>
+<div align="center">
+    <h1>User Registration</h1>
+    <form th:action="@{/registrationForm}" method="post" th:object="${formDTO}">
+        <label>Login:</label>
+        <input type="text" th:field="*{login}" /><br/>
+
+        <label>Hasło:</label>
+        <input type="password" th:field="*{password}" /><br/>
+
+
+        <label>Imię:</label>
+        <input type="text" th:field="*{name}" /><br/>
+
+        <label>Nazwisko:</label>
+        <input type="text" th:field="*{surname}" /><br/>
+
+        <label>E-mail:</label>
+        <input type="text" th:field="*{email}" /><br/>
+
+        <label>Numer telefonu:</label>
+        <input type="tel" th:field="*{phoneNumber}"
+               pattern="[0-9]{9}"
+               required/>
+
+        <button type="submit">Register</button>
+    </form>
+</div>
+</body>
+</html>
