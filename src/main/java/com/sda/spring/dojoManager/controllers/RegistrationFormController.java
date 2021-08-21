@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class RegistrationFormController {
 
-private final UserService userService;
+    private final UserService userService;
 
     public RegistrationFormController(UserService userService) {
         this.userService = userService;
@@ -26,16 +26,34 @@ private final UserService userService;
     @RequestMapping("/registrationForm")
     public String registrationForm(Model model) {
         model.addAttribute("formDTO", new UserDTO());
-           return "registrationForm";
+        return "registrationForm";
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/registrationForm")
     public String postRegistrationForm(UserDTO formDTO) {
 
-       userService.createNewUser(formDTO);
+        userService.createNewUser(formDTO);
         System.out.println("created new user" + formDTO.getLogin());
-        return "index";
+        return "usersProfile";
     }
+
+/*    @RequestMapping("/usersProfile")
+    public String usersProfile(Model model) {
+        model.addAttribute("name", userService.getAllUsersInfo().getName());
+
+        return "usersProfile";
+    }*/
+
+
+    @RequestMapping("/usersList")
+    public String printUsersList(Model model) {
+
+             model.addAttribute("usersData", userService.getAllUsersInfo());
+
+        return "usersList";
+    }
+
+
 }
 
 

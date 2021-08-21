@@ -2,7 +2,8 @@
 <html lang="pl"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Dojo payment manager</title>
+    <title>Users Profile</title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
@@ -10,18 +11,18 @@
 </head>
 <body>
 
-<h5 align="center">Witaj w systemie obsługi płatności za treningi</h5>
-<br>
-<h6 align="center"><a href="/registrationForm">ZAŁÓŻ KONTO</a> w celu śledzenia aktualności w GKKK </h6>
-<h6 align="center">lub </h6>
-<h6 align="center">jeżeli posiadasz już konto ZALOGUJ SIĘ </h6>
+<p>Cześć tu bedą dane usera </p>
+<h3><span th:text="${name}">- user</span></h3>
+
+
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <style>
     .container{
-        max-width: 560px;
-        margin: 5px auto;
+        max-width: 480px;
+        margin: 0 auto;
     }
 </style>
 </body>

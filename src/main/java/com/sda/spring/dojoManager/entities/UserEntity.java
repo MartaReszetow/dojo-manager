@@ -23,20 +23,20 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(nullable = false)
+   @Column(nullable = false)
     private String login;
-    @Column(nullable = false)
+   @Column(nullable = false)
     private String password;
-    @Column(nullable = false)
+   @Column(nullable = false)
     @Enumerated(value = EnumType.STRING)
     private UsersRole usersRole;
-    @Column(nullable = false)
+  @Column(nullable = false)
     private String name;
-    @Column(nullable = false)
+  @Column(nullable = false)
     private String surname;
-    @Column(nullable = false)
+  @Column(nullable = false)
     private String email;
-    @Column(nullable = false)
+  @Column(nullable = false)
     private String phoneNumber;
 
     @OneToMany(fetch = FetchType.EAGER)

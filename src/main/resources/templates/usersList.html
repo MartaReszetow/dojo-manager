@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Rejestracja w systemie</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+<div align="center"><h5>LISTA UŻYTKOWNIKÓW</h5>
+</div>
+<br>
+<br>
+
+
+<table class="highlight">
+     </div>
+    <thead>
+    <tr>
+        <th>Nazwisko</th>
+        <th>Imię</th>
+        <th>Nr telefonu</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="singleUserData: ${usersData}">
+        <td th:text="${singleUserData.getSurname}"></td>
+        <td th:text="${singleUserData.getName()}"></td>
+        <td th:text="${singleUserData.getPhoneNumber()}"></td>
+        <td th:text="${singleUserData.getEmail()}"></td>
+    </tr>
+    </tbody>
+
+</table>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <style>
+        .container{
+            max-width: 480px;
+            margin: 0 auto;
+        }
+    </style>
+</body>
+</html>
