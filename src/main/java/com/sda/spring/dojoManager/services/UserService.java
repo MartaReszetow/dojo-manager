@@ -42,7 +42,6 @@ public class UserService {
     public List<UserDTO> getAllUsersInfo() {
         // ENTITY->DTO
 
-
         final List<UserEntity> userEntityList = userRepository.findAll();
         final List<UserDTO> userDTOList= userEntityList.stream()
                 .map(user -> new UserDTO(user.getName(), user.getSurname(),user.getPhoneNumber(),user.getEmail(),user.getLogin(),user.getUsersRole()))

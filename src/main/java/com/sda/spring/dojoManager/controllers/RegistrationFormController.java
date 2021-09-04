@@ -31,27 +31,25 @@ public class RegistrationFormController {
 
     @RequestMapping(method = RequestMethod.POST, path = "/registrationForm")
     public String postRegistrationForm(UserDTO formDTO) {
-
         userService.createNewUser(formDTO);
         System.out.println("created new user" + formDTO.getLogin());
         return "usersProfile";
     }
 
-/*    @RequestMapping("/usersProfile")
-    public String usersProfile(Model model) {
-        model.addAttribute("name", userService.getAllUsersInfo().getName());
-
-        return "usersProfile";
-    }*/
-
-
     @RequestMapping("/usersList")
     public String printUsersList(Model model) {
-
              model.addAttribute("usersData", userService.getAllUsersInfo());
-
         return "usersList";
     }
+
+
+    @RequestMapping("/editingForm")
+    public String modifyForm(Model model) {
+        model.addAttribute("formDTO", new UserDTO());
+        return "editingForm";
+    }
+
+
 
 
 }

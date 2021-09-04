@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl"  xmlns:th="http://www.thymeleaf.org">
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Dojo payment manager</title>
@@ -7,22 +7,49 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
 </head>
 <body>
-
+<div class="logo">
+    <img src="https://drive.google.com/uc?export=view&id=1nirryeZwEKvYhxJ79pMMew2x6H_6apv7">
+</div>
 <h5 align="center">Witaj w systemie obsługi płatności za treningi</h5>
 <br>
-<h6 align="center"><a href="/registrationForm">ZAŁÓŻ KONTO</a> w celu śledzenia aktualności w GKKK </h6>
-<h6 align="center">lub </h6>
-<h6 align="center">jeżeli posiadasz już konto ZALOGUJ SIĘ </h6>
+<h6 align="center"> Zaloguj się w celu śledzenia aktualności w GKKK </h6>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<style>
-    .container{
-        max-width: 560px;
-        margin: 5px auto;
-    }
-</style>
+
+<div class="container">
+    <form th:action="@{/}" method="post" >
+        <br>
+        <br>
+        <div class="input-field col s6">
+            <label>Login:</label>
+            <input type="text" /><br/>
+        </div>
+
+        <div class="input-field col s6">
+            <label>Hasło:</label>
+            <input type="password" /><br/>
+        </div>
+        <br><br>
+        <button class="btn waves-effect waves-light" type="submit" name="action">ZALOGUJ SIĘ
+            <i class="material-icons right">send</i></button>
+    </form>
+</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <style>
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .container{
+            max-width: 480px;
+            margin: 0 auto;
+        }
+    </style>
 </body>
 </html>
